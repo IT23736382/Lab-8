@@ -13,7 +13,7 @@ public class BankDemo {
             boolean success = false;
             double lastWithdrawnAmount = 0;
 
-            account.displayBalance(); // Show balance at the beginning of each loop
+            account.displayBalance();
 
             System.out.println("\nChoose transaction: 1 - Withdraw, 2 - Deposit");
             int choice = scanner.nextInt();
@@ -40,9 +40,9 @@ public class BankDemo {
             } catch (InsufficientBalanceException e) {
                 System.out.println(e.getMessage());
             } finally {
-                account.displayBalance(); // Show updated balance after transaction
+                account.displayBalance(); 
                 System.out.print("Do you wish to continue? (yes/no): ");
-                scanner.nextLine(); // Consume leftover newline
+                scanner.nextLine(); 
                 String response = scanner.nextLine().trim().toLowerCase();
 
                 if (!response.equals("yes")) {
@@ -50,7 +50,7 @@ public class BankDemo {
                     System.out.println("Thank you for using our service!");
                 } else {
                     if (success && choice == 1) {
-                        account.deposit(lastWithdrawnAmount); // restore withdrawn amount
+                        account.deposit(lastWithdrawnAmount); 
                         System.out.println("Amount redeposited for retry.");
                     }
                 }

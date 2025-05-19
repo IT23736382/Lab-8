@@ -13,7 +13,7 @@ public class BankTask implements Runnable {
     @Override
     public void run() {
         try {
-            double amount = 50 + random.nextInt(200); // Random amount between $50 - $250
+            double amount = 50 + random.nextInt(200); 
             boolean isDeposit = random.nextBoolean();
 
             synchronized (account) {
